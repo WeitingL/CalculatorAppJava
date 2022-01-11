@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +21,7 @@ public class HomeFragment extends Fragment {
 
     ViewBinding binding;
     Button btEnter;
+    EditText etvName;
 
     @Nullable
     @Override
@@ -26,15 +29,29 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater);
 
         btEnter = binding.getRoot().findViewById(R.id.bt_Enter);
+        etvName = binding.getRoot().findViewById(R.id.etv_Name);
+
         btEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.calculatorFragment);
+                if (isEnterName(etvName)){
+                    Navigation.findNavController(view).navigate(R.id.calculatorFragment);
+                }else {
+                    Toast.makeText(getContext(), "Please, Enter the name.", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
-
-
         return binding.getRoot();
     }
+
+    private Boolean isEnterName (EditText editText){
+        if (editText.getText() == null){
+            return false;
+        }else if (editText.getText().length() == 0){
+            return false;
+        }else {
+            return true;
+        }
+    };
 }
