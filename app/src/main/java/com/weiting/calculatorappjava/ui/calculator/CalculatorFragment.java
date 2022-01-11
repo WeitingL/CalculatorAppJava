@@ -22,6 +22,9 @@ public class CalculatorFragment extends Fragment {
         binding = FragmentCalculatorBinding.inflate(inflater);
 
 
+
+
+
         return binding.getRoot();
     }
 }

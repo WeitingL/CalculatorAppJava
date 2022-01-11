@@ -1,8 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.weiting.calculatorappjava.ui.calculator.CalculatorFragment">
+
+    <TextView
+        android:id="@+id/tv_Ans"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="8dp"
+        android:text="TextView"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bt_clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_formula"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="8dp"
+        android:text="TextView"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toStartOf="@+id/bt_delete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Ans" />
+
+    <!--  7.4.1."."   -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_Seven"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="7"
+        app:layout_constraintBottom_toTopOf="@+id/bt_four"
+        app:layout_constraintEnd_toStartOf="@+id/bt_zero"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_formula" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_four"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@+id/bt_one"
+        app:layout_constraintEnd_toEndOf="@+id/bt_Seven"
+        app:layout_constraintStart_toStartOf="@+id/bt_Seven"
+        app:layout_constraintTop_toBottomOf="@+id/bt_Seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_one"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@+id/bt_dot"
+        app:layout_constraintEnd_toEndOf="@+id/bt_four"
+        app:layout_constraintStart_toStartOf="@+id/bt_four"
+        app:layout_constraintTop_toBottomOf="@+id/bt_four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_dot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:text="."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bt_one"
+        app:layout_constraintStart_toStartOf="@+id/bt_one"
+        app:layout_constraintTop_toBottomOf="@+id/bt_one" />
+
+    <!-- 8.5.2.0   -->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_eight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="8"
+        app:layout_constraintBottom_toTopOf="@+id/bt_five"
+        app:layout_constraintEnd_toEndOf="@+id/bt_five"
+        app:layout_constraintStart_toStartOf="@+id/bt_five"
+        app:layout_constraintTop_toTopOf="@+id/bt_Seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_five"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="5"
+        app:layout_constraintBottom_toTopOf="@+id/bt_two"
+        app:layout_constraintEnd_toEndOf="@+id/bt_two"
+        app:layout_constraintStart_toStartOf="@+id/bt_two"
+        app:layout_constraintTop_toBottomOf="@+id/bt_eight" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_two"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="2"
+        app:layout_constraintBottom_toTopOf="@+id/bt_zero"
+        app:layout_constraintEnd_toEndOf="@+id/bt_zero"
+        app:layout_constraintStart_toStartOf="@+id/bt_zero"
+        app:layout_constraintTop_toBottomOf="@+id/bt_five" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_zero"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_dot"
+        app:layout_constraintEnd_toStartOf="@+id/bt_ans"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_Seven"
+        app:layout_constraintTop_toBottomOf="@+id/bt_two" />
+
+    <!-- 9.6.3."="  -->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_nine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="9"
+        app:layout_constraintBottom_toTopOf="@+id/bt_six"
+        app:layout_constraintEnd_toEndOf="@+id/bt_six"
+        app:layout_constraintStart_toStartOf="@+id/bt_six"
+        app:layout_constraintTop_toTopOf="@+id/bt_eight" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_six"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="6"
+        app:layout_constraintBottom_toTopOf="@+id/bt_three"
+        app:layout_constraintEnd_toEndOf="@+id/bt_three"
+        app:layout_constraintStart_toStartOf="@+id/bt_three"
+        app:layout_constraintTop_toBottomOf="@+id/bt_nine" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_three"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="3"
+        app:layout_constraintBottom_toTopOf="@+id/bt_ans"
+        app:layout_constraintEnd_toEndOf="@+id/bt_ans"
+        app:layout_constraintStart_toStartOf="@+id/bt_ans"
+        app:layout_constraintTop_toBottomOf="@+id/bt_six" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_ans"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="30dp"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="@+id/bt_zero"
+        app:layout_constraintEnd_toEndOf="@+id/tv_formula"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_zero"
+        app:layout_constraintTop_toBottomOf="@+id/bt_three" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_plus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/bt_minus"
+        app:layout_constraintEnd_toEndOf="@+id/bt_minus"
+        app:layout_constraintStart_toStartOf="@+id/bt_minus"
+        app:layout_constraintTop_toTopOf="@+id/bt_nine" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_minus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="-"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_mult"
+        app:layout_constraintEnd_toEndOf="@+id/bt_mult"
+        app:layout_constraintStart_toStartOf="@+id/bt_mult"
+        app:layout_constraintTop_toBottomOf="@+id/bt_plus" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_mult"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="x"
+        app:layout_constraintBottom_toTopOf="@+id/bt_obelus"
+        app:layout_constraintEnd_toEndOf="@+id/bt_obelus"
+        app:layout_constraintStart_toStartOf="@+id/bt_obelus"
+        app:layout_constraintTop_toBottomOf="@+id/bt_minus" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_obelus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="÷"
+        app:layout_constraintBottom_toTopOf="@+id/bt_factorial"
+        app:layout_constraintEnd_toEndOf="@+id/bt_factorial"
+        app:layout_constraintStart_toStartOf="@+id/bt_factorial"
+        app:layout_constraintTop_toBottomOf="@+id/bt_mult" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_factorial"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:text="!"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_ans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bt_ans"
+        app:layout_constraintTop_toBottomOf="@+id/bt_obelus" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_clear"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:text="c"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Ans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_Ans" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_delete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:text="Del"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_formula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_Ans"
+        app:layout_constraintTop_toTopOf="@+id/tv_formula" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

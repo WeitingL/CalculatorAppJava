@@ -10,12 +10,15 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.ActionBarOverlayLayout;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.viewbinding.ViewBinding;
 
 import com.weiting.calculatorappjava.R;
 import com.weiting.calculatorappjava.databinding.FragmentHomeBinding;
+import com.weiting.calculatorappjava.ui.calculator.CalculatorFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -35,7 +38,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (isEnterName(etvName)){
-                    Navigation.findNavController(view).navigate(R.id.calculatorFragment);
+                    Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_calculatorFragment);
                 }else {
                     Toast.makeText(getContext(), "Please, Enter the name.", Toast.LENGTH_LONG).show();
                 }
